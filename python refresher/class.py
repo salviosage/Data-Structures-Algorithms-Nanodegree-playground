@@ -17,7 +17,7 @@ print(bob.person_age)
 # prints 33
 
 
-class Person:
+class Person2:
     def __init__(self, name, age, month):
         self.name = name
         self.age = age
@@ -30,7 +30,7 @@ def create_person_objects(names, ages, months):
     my_data = zip(names, ages, months)
     person_objects = []
     for item in my_data:
-        person_objects.append(Person(*item))
+        person_objects.append(Person2(*item))
     return person_objects
 
 def get_april_birthdays(people):
