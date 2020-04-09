@@ -11,6 +11,9 @@ global huff
 def huffman_encoding(data):
     global huff
     huff = {}
+    print(not data)
+    if not data:
+        return data, None
     for char in data:
         huff[char] = huff.get(char, 0) + 1
     tree = {}
@@ -41,23 +44,31 @@ def huffman_decoding(data,tree):
 
 if __name__ == "__main__":
     codes = {}
-
-    a_great_sentence = "The bird is the word"
-
+def testcases(a_great_sentence):
     print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
     print ("The content of the data is: {}\n".format(a_great_sentence))
 
     encoded_data, tree = huffman_encoding(a_great_sentence)
+    if not encoded_data:
+        print ("The size of the encoded data is 0")
+        print ("The content of the encoded data is null")
+        print ("The size of the decoded data is 0")
+        print ("The content of the encoded data is null")
+    else:
+        print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
+        print ("The content of the encoded data is: {}\n".format(encoded_data))
 
-    print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
-    print ("The content of the encoded data is: {}\n".format(encoded_data))
+        decoded_data = huffman_decoding(encoded_data, tree)
 
-    decoded_data = huffman_decoding(encoded_data, tree)
+        print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+        print ("The content of the encoded data is: {}\n".format(decoded_data))
 
-    print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
-    print ("The content of the encoded data is: {}\n".format(decoded_data))
-        
-
+first_sentence = "The bird is the word"
+second_sentence = "aaaaaaaaaa"
+third_sentence = "" 
+testcases(first_sentence)  
+testcases(second_sentence) 
+testcases(third_sentence)
 
 # In[ ]:
 
