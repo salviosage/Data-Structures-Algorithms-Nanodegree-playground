@@ -55,6 +55,16 @@ test_case_3 = [[], [-1, -1]]
 # Should print pass as the output should be []
 test_function(test_case_3)
 
+# Test case 6 - single input list
+test_case_6 = [[3], [-1, -1]]
+# Should print pass as the output should be [-1, -1] becouse it cant form two number from one number input
+test_function(test_case_6)
+
+# Test case 7 - single  number input list
+test_case_7 = [[3,0], [3, 0]]
+# Should print pass as the output should be [3, 0] becouse its two number input list
+test_function(test_case_6)
+
 test_case_4=([[1, 2, 3, 4, 5], [542, 31]])
 test_case_5 = [[4, 6, 2, 5, 9, 8], [964, 852]]
 
